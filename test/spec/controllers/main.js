@@ -4,7 +4,6 @@ describe('Controller: MainCtrl', function () {
 
   // load the controller's module
   beforeEach(module('taskTimerApp'));
-  beforeEach(module('ui.bootstrap'));
 
   var MainCtrl,
     scope;
