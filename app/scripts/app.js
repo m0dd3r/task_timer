@@ -10,8 +10,8 @@ angular.module('taskTimerApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/tasks.html',
+        controller: 'TasksCtrl'
       })
       .otherwise({
         redirectTo: '/'

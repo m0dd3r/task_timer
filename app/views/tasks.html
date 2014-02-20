@@ -1,0 +1,32 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">task_timer</h3>
+</div>
+
+<div class="jumbotron" ng-show="tasks.length == 0">
+  <h1>Create a task</h1>
+  <p>Add a task to get started, enter the name of the first thing you'll be working on today</p>
+  <input type="text" placeholder="Task name" ng-model="task.name"/>
+  <button class="btn btn-primary btn-sm" ng-disabled="!task.name" ng-click="addTask()">Go!</a>
+</div>
+
+<div class="panel panel-default" ng-hide="tasks.length == 0">
+  <div class="panel-body">
+    <h2>When you start working on a task, click on it to start the timer.</h2>
+    <div class="btn-group">
+      <button ng-repeat="task in tasks" ng-controller="TaskCtrl" ng-click="toggleRunning()" class="btn btn-default">{{task.name}} : {{task.time}}</button>
+    </div>
+    <div>
+      <p>When you get interrupted, distracted, or otherwise sidetracked, add a task to keep track of how much time you spend on it.</p>
+      <input type="text" placeholder="Task name" ng-model="task.name"/>
+      <button class="btn btn-primary btn-sm" ng-disabled="!task.name" ng-click="addTask()">Go!</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+</div>
