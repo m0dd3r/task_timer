@@ -21,10 +21,11 @@ describe('Controller: TasksCtrl', function () {
 
   describe('addTask()', function() {
     it('adds $scope.task to $scope.tasks', function() {
-      scope.task = {name: 'test task'};
+      var task = {name: 'test task'};
+      scope.task = task;
       scope.addTask();
       expect(scope.tasks.length).toBe(1);
-      expect(scope.tasks[0]).toBe(scope.task);
+      expect(scope.tasks[0].name).toBe(task.name);
     });
   });
 });
