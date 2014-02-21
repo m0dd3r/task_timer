@@ -5,12 +5,14 @@ var TaskService = function($timeout) {
     var _self = this;
     this.name = null;
     this.time = 0;
+    this.count = 0;
     var timer = null;
     var tick = function() {
       _self.time++;
       timer = $timeout(tick,1000);
     };
     this.start = function() {
+      _self.count++;
       timer = $timeout(tick,0);
     };
     this.stop = function() {
