@@ -18,10 +18,11 @@
   <div class="panel-body">
     <h2>When you start working on a task, click on it to start the timer.</h2>
     <div class="btn-group">
-      <button ng-repeat="task in tasks" ng-controller="TaskCtrl" ng-click="toggleRunning()" class="btn btn-default">{{task.name}} : {{task.time}}</button>
+      <button ng-repeat="task in tasks | orderBy:'-time'" ng-controller="TaskCtrl" ng-click="toggleRunning()" class="btn btn-default">{{task.name}} ({{task.count}})<br/>{{task.time | time}}</button>
     </div>
     <div>
       <p>When you get interrupted, distracted, or otherwise sidetracked, add a task to keep track of how much time you spend on it.</p>
+      <p>You can also click on the running task to stop its timer.</p>
       <input type="text" placeholder="Task name" ng-model="task.name"/>
       <button class="btn btn-primary btn-sm" ng-disabled="!task.name" ng-click="addTask()">Go!</a>
     </div>
