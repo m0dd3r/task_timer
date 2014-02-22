@@ -5,7 +5,8 @@ angular.module('taskTimerApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'LocalStorageModule'
 ])
   .config(function ($routeProvider) {
     $routeProvider
